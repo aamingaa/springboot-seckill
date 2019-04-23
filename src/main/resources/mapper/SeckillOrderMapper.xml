@@ -6,8 +6,8 @@
 
     <!-- 插入订单明细。如果主键冲突会直接报错，可使用`ignore`实现主键冲突就直接返回0，表示更新失败 -->
     <insert id="insertOrder">
-        INSERT ignore INTO seckill_order(seckill_id, money, user_phone)
-        VALUES (#{seckillId}, #{money}, #{userPhone})
+        INSERT ignore INTO seckill_order(seckill_id, money, user_phone, state)
+        VALUES (#{seckillId}, #{money}, #{userPhone}, 0)
     </insert>
 
     <!-- 查询订单明细表并得到对应秒杀商品的数据
